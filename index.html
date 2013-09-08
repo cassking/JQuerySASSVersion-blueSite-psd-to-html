@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<!-- paulirish.com/2008/conditional-stylesheets-vs-css-hacks-answer-neither/ -->
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+ <!-- Use the .htaccess and remove these lines to avoid edge case issues.
+       More info: h5bp.com/i/378 -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- Mobile viewport optimized: h5bp.com/viewport -->
+   <meta name="viewport" content="width=device-width"> 
+  <title>Comfort Hotel PSD to HTML</title>
+  <meta name="description" content="Comfort Hotel PSD to HTML">
+  <meta name="author" content="ComfortHotel">
+
+
+    <link rel="stylesheet" href="css/styles.css">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+  <script type="text/javascript">
+$(document).ready(function(){
+  var currentPosition = 0;
+  var slideWidth = 922;
+  var slides = $('.slide');
+  var numberOfSlides = slides.length;
+
+  // Remove scrollbar in JS
+  $('#slidesContainer').css('overflow', 'hidden');
+
+  // Wrap all .slides with #slideInner div
+  slides
+    .wrapAll('<div id="slideInner"></div>')
+    // Float left to display horizontally, readjust .slides width
+  .css({
+      'float' : 'left',
+      'width' : slideWidth
+    });
+
+  // Set #slideInner width equal to total width of all slides
+  $('#slideInner').css('width', slideWidth * numberOfSlides);
+
+  // Insert controls in the DOM
+  $('#slideshow')
+    .prepend('<span class="control" id="leftControl">Clicking moves left</span>')
+    .append('<span class="control" id="rightControl">Clicking moves right</span>');
+
+  // Hide left arrow control on first load
+  manageControls(currentPosition);
+
+  // Create event listeners for .controls clicks
+  $('.control')
+    .bind('click', function(){
+    // Determine new position
+  currentPosition = ($(this).attr('id')=='rightControl') ? currentPosition+1 : currentPosition-1;
+    
+  // Hide / show controls
+    manageControls(currentPosition);
+    // Move slideInner using margin-left
+    $('#slideInner').animate({
+      'marginLeft' : slideWidth*(-currentPosition)
+    });
+  });
+
+  // manageControls: Hides and Shows controls depending on currentPosition
+  function manageControls(position){
+    // Hide left arrow if position is first slide
+  if(position==0){ $('#leftControl').hide() } else{ $('#leftControl').show() }
+  // Hide right arrow if position is last slide
+    if(position==numberOfSlides-1){ $('#rightControl').hide() } else{ $('#rightControl').show() }
+  } 
+});
+</script>
+</head>
+
+<body>
+<div id="main-container"> <!-- begin main-container all body content -->
+
+<header> <!-- Navigation and logo -->
+<div class="nav-bg">
+<nav>
+<ul>
+<li><a href="#">Home </a></li>
+<li><a href="#">Hotel </a></li>
+<li><a href="#">Booking </a></li>
+<li><a href="#">Services </a></li>
+<li><a href="#">Events </a></li>
+<li><a href="#">Restaurant </a></li>
+<li><a href="#">Locations </a></li>
+</ul>
+
+</nav>
+
+<div id="logo"> <h1><a href="#"><img src="images/logo.png" alt="Comfort Hotel" /></a></h1></div>
+
+</header>  <!-- end Navigation and logo -->
+
+<div id="featured-image" > 
+  <!-- Slideshow --> 
+  
+<!-- Slideshow HTML -->
+<div id="slideshow">
+  <div id="slidesContainer">
+    <div class="slide">
+      <p>
+      <a href="#"><img  src="images/slide1.jpg" alt="Hotel Scene1"></a></p>
+        <div class='description'>  
+        <!-- description content -->  
+        <p class='description-content'>Hotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotel</p>  
+        <!-- end description content -->  
+      </div>
+    </div>
+    <div class="slide">
+      <p>
+      <a href="#"><img src="images/slide2.jpg" alt="Hotel Scene2"></a> </p>
+      <div class='description'>  
+        <!-- description content -->  
+        <p class='description-content'>Hotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotel</p>  
+        <!-- end description content -->  
+      </div>
+    </div>
+    <div class="slide">
+      <p>
+      <a href="#"><img src="images/slide3.jpg" alt="Hotel Scene3"></a> </p>
+      <div class='description'>  
+        <!-- description content -->  
+        <p class='description-content'>Hotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotel</p>  
+        <!-- end description content -->  
+      </div>
+    </div>
+    <div class="slide">
+      <p>
+      <a href="#"><img src="images/slide4.jpg" alt="Hotel Scene4"></a> </p>
+      <div class='description'>  
+        <!-- description content -->  
+        <p class='description-content'>Hotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotel</p>  
+        <!-- end description content -->  
+      </div>
+    </div>
+     <div class="slide">
+      <p>
+      <a href="#"><img src="images/slide5.jpg" alt="Hotel Scene5"></a> </p>
+      <div class='description'>  
+        <!-- description content -->  
+        <p class='description-content'>Hotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotel</p>  
+        <!-- end description content -->  
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Slideshow HTML -->
+</div> <!-- end featured-image div -->
+
+
+<div class="row second">
+
+
+ <div class="block small">
+    <div class="head">
+    <div class="circle-flourish"></div>
+    <h2 class="category">Services</h2>
+    <div class="circle-flourish"></div></div>
+     <img src="images/slide1.jpg" width="230px"  height="130px" />
+<p>Hotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotel.</p>
+<div class="pattern-bg button">Read more</div>  
+
+  </div>
+
+
+
+  <div class="block small">
+    <div class="head">
+    <div class="circle-flourish"> </div>
+    <h2 class="category">Events</h2>
+    <div class="circle-flourish"> </div></div> 
+    <img src="images/slide1.jpg" width="230px"  height="130px" />
+<p>Hotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotel.</p>
+<div class="pattern-bg button">Read more</div>
+
+</div>
+
+   <div class="block small">
+    <div class="head">
+    <div class="circle-flourish"></div>
+    <h2 class="category">Restaurants</h2>
+    <div class="circle-flourish"></div></div> 
+    <img src="images/slide1.jpg" width="230px"  height="130px" />
+<p>Hotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotel.</p>
+<div class="pattern-bg button">Read more</div>
+</div>
+
+
+
+</div> <!-- end row second -->
+
+
+<div class="row third">
+
+<div class="block large"> <h3>Welcome!</h3><img src="images/welcome2.jpg" width="150px"  height="130px" /><p class="cattext" >Hotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotel. Hotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotel. Hotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotelHotel hotel hotel.</p> <div class="pattern-bg button">Read more</div></div>
+   <div class="block medium"> <div class="head">
+    <div class="circle-flourish"></div>
+    <h2 class="category">Packages</h2>
+    <div class="circle-flourish"></div></div>
+<ul class="catlist">
+<li>Business Package ($745)    </li> 
+
+<li>Time for family ($452)    </li>
+
+<li>New Year 2011 ($854)    </li>
+
+<li> New Year 2012 ($854)   </li>
+</ul>
+  </div>
+
+
+</div> <!-- end row third -->
+
+
+<footer class="footer-bg">
+<nav>
+<ul>
+<li><a href="#">Home </a></li>
+<li><a href="#">Hotel </a></li>
+<li><a href="#">Booking </a></li>
+<li><a href="#">Services </a></li>
+<li><a href="#">Events </a></li>
+<li><a href="#">Restaurant </a></li>
+<li><a href="#">Locations </a></li>
+</ul>
+
+</nav>
+<div class="col5">
+<h4>Contact Us</h4>
+<p>7th Sky Heaven Street<br>
+Call Us : 1854654</p>
+ 
+
+</div>
+
+<div class="col5">
+</div>
+<div class="col5">
+</div>
+<div class="col5">
+</div>
+<div class="col5">
+<h4>Follow Us</h4>
+<p>7th Sky Heaven Street<br>
+Call Us : 1854654</p>
+</div>
+</footer>
+
+</div>
+
+
+</div> <!-- end main-container -->
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ <!-- JavaScript at the bottom for fast page loading -->
+
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+ 
+</body>
+</html>

@@ -1,0 +1,29 @@
+@font-face {
+    font-family: 'Opificio';
+   
+    src: url('Opificio.ttf') format('truetype');
+        
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'OpificioBold';
+   
+    src: url('Opificio_Bold.ttf') format('truetype');
+        
+    font-weight: bold;
+    font-style: bold;
+
+}
+
+@font-face {
+    font-family: 'OpificioRound';
+   
+    src: url('Opificio_rounded.ttf') format('truetype');
+        
+    font-weight: normal;
+    font-style: normal;
+
+}

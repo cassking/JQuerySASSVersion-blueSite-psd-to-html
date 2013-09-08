@@ -1,0 +1,40 @@
+
+
+//Font weights
+$light: 100;
+$regular: 400;
+$bold: 600;
+
+
+//Base font
+$base-font-family: sans-serif, Trebuchet,  Helvetica, Arial, FreeSans;
+
+$base-font-size: 13px;
+$base-font-lineheight: 1.2;
+$secondary-font-size: 15px;
+$base-font-weight: $regular;
+ 
+$base-font-color: #fff;
+
+
+//Fancy font
+$fancy-font-family:'Opificio';
+
+// Headings
+$header-margin-bottom: 20px;
+
+
+
+
+body { font: $base-font-size,   $base-font-family;}
+h1, h2, h3, h4, h5, h6 {  color: $base-font-color; font-family: $fancy-font-family, $base-font-family; }
+h1 { font-size: 50px; text-shadow:1px 1px 0; color: $base-font-color; font-family:arial black, $base-font-family;}
+h2 { font-size: 25px; }
+h3 { font-size: 21px; }
+h4 { font-size: 19px; }
+h5 { font-size: 17px; }
+h6 { font-size: 15px; }
+p, h1, h2, h3, h4, h5, h6, ul { margin-bottom: $header-margin-bottom; }
+p, span, div {font-family: $fancy-font-family;}
+ul {font-family: $fancy-font-family, $base-font-family;}
+article, aside, dialog, figure, footer, header, hgroup, menu, nav, section { display: block; }
